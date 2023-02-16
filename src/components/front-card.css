@@ -1,0 +1,41 @@
+.front-container {
+  position: absolute;
+  bottom: -50px;
+  left: 20px;
+  width: 75%;
+  height: 160px;
+  background-image: url("../images/bg-card-front.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0.5rem 1rem;
+  color: var(--white);
+  z-index: 100;
+  box-shadow: 1px 1px 10px #2e2d2d00;
+}
+
+.front-container .card-number {
+  font-size: 14px;
+  letter-spacing: 4px;
+  font-weight: 500;
+}
+
+.front-bottom {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  font-weight: 200;
+  font-size: 12px;
+}
+
+@media (min-width: 1199.98px) {
+  .front-container {
+    left: 160px;
+    top: 100px;
+    width: 80%;
+    height: 190px;
+  }
+}
