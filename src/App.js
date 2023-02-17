@@ -27,7 +27,7 @@ function App() {
         <BackCard value={values} />
       </div>
       <div className="bottom">
-        {status === "send" && <SendPage />}
+        {status === "send" && <SendPage setStatus={setStatus} />}
         {status === "typing" && (
           <>
             <form onSubmit={handleSubmit}>
@@ -36,7 +36,7 @@ function App() {
                 <input
                   type="text"
                   placeholder="e.g Jane Appleseed"
-                  value={values.name}
+                  value={values.name.toUpperCase()}
                   onChange={(e) =>
                     setValues({
                       ...values,
@@ -50,7 +50,10 @@ function App() {
                 <input
                   type="text"
                   placeholder="e.g. 1234 5678 9123 0000"
-                  value={values.cardNumber}
+                  value={values.cardNumber
+                    .replace(/\s/g, "")
+                    .replace(/(\d{4})/g, "$1 ")
+                    .trim()}
                   onChange={(e) =>
                     setValues({
                       ...values,

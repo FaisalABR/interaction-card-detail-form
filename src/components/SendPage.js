@@ -2,7 +2,7 @@ import React from "react";
 
 import "./send-page.css";
 
-const SendPage = () => {
+const SendPage = ({ setStatus }) => {
   return (
     <div className="send-container">
       <svg
@@ -29,7 +29,7 @@ const SendPage = () => {
       </svg>
       <h1>THANK YOU!</h1>
       <p>We've added your card details</p>
-      <button>Continue</button>
+      <button onClick={() => setStatus("typing")}>Continue</button>
     </div>
   );
 };
